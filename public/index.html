@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css" type="text/css">
+</head>
+
+<body ng-app="bt" ng-cloak="">
+
+    <div ng-controller="bluetoothCtrl as bluetooth">
+
+        <form ng-submit="bluetooth.setColor(hex)">
+
+            <md-content class="md-padding" layout-xs="column" layout="row">
+
+                <div flex-xs flex-gt-xs="50" layout="column">
+
+                    <md-card md-theme="default" md-theme-watch>
+
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">Set the bluetooth bulb color</span>
+                                <span class="md-subhead">
+
+                            <md-input-container class="md-block" flex-gt-sm="">
+
+                                <label>Red color value</label>
+                                <input ng-model="hex.red" type="number" ng-maxlength="3">
+                            </md-input-container>
+
+                            <md-input-container class="md-block" flex-gt-sm="">
+
+                                <label>Green color value</label>
+                                <input ng-model="hex.green" type="number" ng-maxlength="3">
+                            </md-input-container>
+
+                            <md-input-container class="md-block" flex-gt-sm="">
+
+                                <label>Blue color value</label>
+                                <input ng-model="hex.blue" type="number" ng-maxlength="3">
+                            </md-input-container>
+
+                            </span>
+                            </md-card-title-text>
+                        </md-card-title>
+
+                        <md-card-actions layout="row" layout-align="end center">
+                            <md-button type="submit">Submit</md-button>
+                            <input type="text" ng-model="currentSpeechValue">
+                        </md-card-actions>
+
+                    </md-card>
+                </div>
+
+                <div flex-xs flex-gt-xs="50" layout="column">
+
+                    <md-card md-theme="default" md-theme-watch>
+
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">Quick switches</span>
+                                <span class="md-subhead">
+                                    
+                                    <md-radio-group ng-model="hex.switchOff">
+
+                                        <md-radio-button value="true">Switch Off</md-radio-button>
+                                    </md-radio-group>
+                                </span>
+                            </md-card-title-text>
+                        </md-card-title>
+
+                        <md-card-actions layout="row" layout-align="end center">
+                            <md-button type="submit">Submit</md-button>
+                        </md-card-actions>
+
+                    </md-card>
+                </div>
+                
+            </md-content>
+        </form>
+    </div>
+
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="build/app.js"></script>
+    <script src="build/bluetooth/bluetooth.controller.js"></script>
+    <script src="build/bluetooth/bluetooth.factory.js"></script>
+    <script src="build/speech-recognition/speech-recognition.factory.js"></script>
+    <script src="build/speech-recognition/speech-to-colour.service.js"></script>
+</body>
+
+</html>
